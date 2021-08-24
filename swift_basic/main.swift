@@ -8,6 +8,8 @@
 import Foundation
 
 //task 1
+print("Task 1:")
+
 let a: Double = 1
 let b: Double = 0
 let c: Double = -1
@@ -31,3 +33,15 @@ if d < 0 {
     let x2: Double = (0 - b - sqrt(d)) / 2 / a
     print("D = \(d)\nx1 = \(x1)\nx2 = \(x2)")
 }
+
+//task 2
+print("\nTask 2:")
+
+let ab: Double = 3
+let ac: Double = 4
+
+let square: Double = ab*ac/2
+let bc: Double = sqrt(ab*ab + ac*ac)
+let perimeter: Double = ab+bc+ac
+    
+print("Площадь = \(square)\nПериметр = \(perimeter)\nГипотенуза = \(bc)")
