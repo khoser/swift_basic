@@ -45,3 +45,19 @@ let bc: Double = sqrt(ab*ab + ac*ac)
 let perimeter: Double = ab+bc+ac
     
 print("Площадь = \(square)\nПериметр = \(perimeter)\nГипотенуза = \(bc)")
+
+//task 3
+print("\nTask 3:")
+
+let sum: Double = 100000
+let percent: Double = 3
+let years: Double = 5
+
+// Будем считать как капитализацию процентов каждый день.
+let capitalisationPeriods: Double = 365  //считаю все годы не високосными для простоты
+
+//эффективная ставка будет такой
+let es: Double = (pow((1 + percent / 100 / capitalisationPeriods) , capitalisationPeriods * years) - 1) * 100 * years
+
+let result: Double = round(sum + sum * es / 100)
+print("Через \(years) лет сумма будет \(result)")
