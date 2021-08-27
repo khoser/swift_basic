@@ -47,3 +47,16 @@ for i in 1...100 {
 }
 print(array100)
 print(array100[3])
+
+
+//Task 4
+var isEven, is3ven: Bool
+for i in array100.reversed() {
+    isEven = isEven(i)
+    is3ven = isThreeven(i)
+    print("\(i) четное: \(isEven), делится на 3:\(is3ven) - удаляем: \(isEven || !is3ven)")
+    if isEven || !is3ven {
+        array100.remove(at: i-1)
+    }
+}
+print(array100)
