@@ -60,3 +60,21 @@ for i in array100.reversed() {
     }
 }
 print(array100)
+
+
+//Task 5
+func addOneFibo(_ arr: inout Array<Int>) {
+    if arr.count < 2 {
+        arr.removeAll()
+        arr.append(0)
+        arr.append(1)
+    } else {
+        arr.append(arr.last! + arr[arr.count - 2])
+    }
+}
+var arrayFibo: Array<Int> = []
+while arrayFibo.count < 50 {
+    addOneFibo(&arrayFibo)
+    print(arrayFibo)
+}
+print(arrayFibo.count)
