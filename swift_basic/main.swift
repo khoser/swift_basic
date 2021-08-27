@@ -78,3 +78,58 @@ while arrayFibo.count < 50 {
     print(arrayFibo)
 }
 print(arrayFibo.count)
+
+
+//Task 6
+//решил считать по-своему. не как в задаче. менее эффективно вроде бы. Но в задаче есть ошибка - если мы в пункте с будем удалять от 2+р, то при р=3 мы удалим 5, а это не верно.
+func remAllDividedToTheFirst(_ arr : inout Array<Int>) {
+    var k = arr.count - 1
+    for i in arr.reversed() {
+        if i % arr.first! == 0 {
+            arr.remove(at: k)
+        }
+        k -= 1
+    }
+}
+
+func isPrime(_ val : Int) -> Bool {
+    switch val {
+    case 1:
+        return true
+    case _ where val <= 0:
+        return false
+    default:
+        break
+    }
+    var arr: Array<Int> = []
+    for i in 2...val {
+        arr.append(i)
+    }
+    var countBefore = arr.count
+    for _ in 2...val {
+        if countBefore == 1 && arr.last! == val {
+            return true
+        }
+        remAllDividedToTheFirst(&arr)
+        if arr.last! != val {
+            return false
+        }
+        if countBefore == arr.count {
+            return true
+        }
+        countBefore = arr.count
+    }
+    return false
+}
+
+print(isPrime(4))
+array100.removeAll()
+var i = 2
+while array100.count < 100 {
+    if isPrime(i) {
+        array100.append(i)
+        print(i)
+    }
+    i += 1
+}
+print(array100)
