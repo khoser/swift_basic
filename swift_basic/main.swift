@@ -38,3 +38,12 @@ func isThreeven(_ val : Int) -> Bool {
 
 print(isThreeven(150))
 print(isThreeven(1501))
+
+
+//Task 3
+var array100: Array<Int> = []
+for i in 1...100 {
+    array100.append(i)
+}
+print(array100)
+print(array100[3])
